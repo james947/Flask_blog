@@ -10,7 +10,7 @@ conn.close()
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////E:\blog project\blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/jamesmuriuki/Desktop/Projects/flask_blog/blog.db'
 
 db = SQLAlchemy(app)
 
