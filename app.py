@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 import sqlite3
 from datetime import datetime
+import os
 
 #creating blog db with sqlite
 conn = sqlite3.connect('blog.db')
@@ -10,7 +11,7 @@ conn.close()
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/jamesmuriuki/Desktop/Projects/flask_blog/blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 
 db = SQLAlchemy(app)
 
